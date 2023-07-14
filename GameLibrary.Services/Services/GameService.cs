@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using GameLibrary.Domain.Contexts;
+﻿using GameLibrary.Domain.Contexts;
 using GameLibrary.Domain.Entities;
 using GameLibrary.Domain.Models;
 using GameLibrary.Services.Interfaces;
@@ -10,20 +9,25 @@ namespace GameLibrary.Services.Services;
 public class GameService : IGameService
 {
     private GameLibraryDbContext GameLibraryDbContext { get; }
-    
-    private IMapper Mapper { get; }
 
-    public GameService(GameLibraryDbContext context, IMapper mapper)
+    public GameService(GameLibraryDbContext context)
     {
         GameLibraryDbContext = context;
-        Mapper = mapper;
     }
     
     public async Task<IEnumerable<GameDto>> GetAllGames(CancellationToken cancellationToken)
     {
         var games = await GameLibraryDbContext.Games
             .AsNoTracking()
-            .Select(x => Mapper.Map<GameDto>(x))
+            .Include(g => g.GameGenres)
+            .ThenInclude(gg => gg.Genre)
+            .Select(x => new GameDto
+            {
+                Id = x.Id,
+                Title = x.Title,
+                DeveloperId = x.DeveloperId,
+                GenreIds = x.GameGenres.Select(gg => gg.GenreId).ToList()
+            })
             .ToListAsync(cancellationToken);
 
         return games;
@@ -34,15 +38,22 @@ public class GameService : IGameService
         if (id <= 0)
         {
             throw new Exception("Invalid ID");
-            
         }
 
         var game = await GameLibraryDbContext.Games
             .AsNoTracking()
+            .Include(g => g.GameGenres)
+            .ThenInclude(gg => gg.Genre)
             .Where(x => x.Id == id)
             .FirstOrDefaultAsync(cancellationToken);
 
-        var result = Mapper.Map<GameDto>(game);
+        var result = new GameDto
+        {
+            Id = game!.Id,
+            Title = game.Title,
+            DeveloperId = game.DeveloperId,
+            GenreIds = game.GameGenres.Select(gg => gg.GenreId).ToList()
+        };
 
         return result;
     }
@@ -58,7 +69,7 @@ public class GameService : IGameService
         {
             Title = gameDto.Title,
             DeveloperId = gameDto.DeveloperId,
-            Genres = gameDto.Genres.Select(genreId => new GenreEntity { Id = genreId }).ToList()
+            GameGenres = gameDto.GenreIds.Select(genreId => new GameGenreEntity { GenreId = genreId }).ToList()
         };
 
         GameLibraryDbContext.Games.Add(newGame);
@@ -67,7 +78,6 @@ public class GameService : IGameService
 
         return true;
     }
-
     
     public async Task<bool> Update(int id, GameDto gameDto, CancellationToken cancellationToken)
     {
@@ -75,20 +85,47 @@ public class GameService : IGameService
         {
             throw new Exception("Invalid ID");
         }
-            
+
         var gameToUpdate = await GameLibraryDbContext.Games
+            .Include(g => g.GameGenres)
             .Where(x => x.Id == id)
             .FirstOrDefaultAsync(cancellationToken);
-            
+
         if (gameToUpdate is null)
         {
             throw new NullReferenceException();
         }
 
         gameToUpdate.Title = gameDto.Title ?? gameToUpdate.Title;
+        
+        GameLibraryDbContext.GameGenres.RemoveRange(gameToUpdate.GameGenres);
+        
+        gameToUpdate.GameGenres = gameDto.GenreIds.Select(genreId => new GameGenreEntity { GenreId = genreId }).ToList();
 
         await GameLibraryDbContext.SaveChangesAsync(cancellationToken);
 
         return true;
     }
-}
+
+        public async Task<bool> Delete(int id, CancellationToken cancellationToken)
+        {
+            if (id <= 0)
+            {
+                throw new Exception("Invalid ID");
+            }
+
+            var gameToDelete = await GameLibraryDbContext.Games
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (gameToDelete is null)
+            {
+                throw new NullReferenceException();
+            }
+
+            GameLibraryDbContext.Games.Remove(gameToDelete);
+
+            await GameLibraryDbContext.SaveChangesAsync(cancellationToken);
+            return true;
+        }
+    }

@@ -8,5 +8,9 @@ public interface IGenreService
 
     Task<GenreDto> GetGenreById(int id, CancellationToken cancellationToken);
 
-    Task<bool> Create(GameDto gameDto, CancellationToken cancellationToken);
+    Task<bool> Create(GenreDto genreDto, CancellationToken cancellationToken);
+
+    Task<bool> Update(int id, GenreDto genreDto, CancellationToken cancellationToken);
+
+    Task<bool> Delete(int id, CancellationToken cancellationToken);
 }

@@ -11,10 +11,12 @@ public sealed class GameLibraryDbContext : DbContext
     }
 
     public DbSet<DeveloperEntity> Developers { get; set; } = null!;
-
+    
     public DbSet<GameEntity> Games { get; set; } = null!;
 
     public DbSet<GenreEntity> Genres { get; set; } = null!;
+
+    public DbSet<GameGenreEntity> GameGenres { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -30,11 +32,32 @@ public sealed class GameLibraryDbContext : DbContext
                 .WithMany()
                 .HasForeignKey(e => e.DeveloperId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasMany(e => e.GameGenres)
+                .WithOne(e => e.Game)
+                .HasForeignKey(e => e.GameId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
         });
 
         modelBuilder.Entity<GenreEntity>(entity =>
         {
             entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<GameGenreEntity>(entity =>
+        {
+            entity.HasKey(e => new { e.GameId, e.GenreId });
+            entity.HasOne(e => e.Game)
+                .WithMany(e => e.GameGenres)
+                .HasForeignKey(e => e.GameId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
+            entity.HasOne(e => e.Genre)
+                .WithMany(e => e.GameGenres)
+                .HasForeignKey(e => e.GenreId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
         });
     }
 }

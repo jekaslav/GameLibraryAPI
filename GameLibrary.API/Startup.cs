@@ -5,7 +5,6 @@ using GameLibrary.Services.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
-
 namespace GameLibrary.API;
 
 public static class Startup

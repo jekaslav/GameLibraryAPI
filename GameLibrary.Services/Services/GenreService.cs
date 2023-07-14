@@ -48,25 +48,69 @@ public class GenreService : IGenreService
     }
     
 
-    public async Task<bool> Create(GameDto gameDto, CancellationToken cancellationToken)
+    public async Task<bool> Create(GenreDto genreDto, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(gameDto.Title))
+        if (string.IsNullOrWhiteSpace(genreDto.Name))
         {
             throw new ArgumentException();
         }
 
-        var newGame = new GameEntity
+        var newGenre = new GenreEntity
         {
-            Title = gameDto.Title,
-            
+            Name = genreDto.Name,
+            Description = genreDto.Description
         };
 
-        GameLibraryDbContext.Games.Add(newGame);
+        GameLibraryDbContext.Genres.Add(newGenre);
 
         await GameLibraryDbContext.SaveChangesAsync(cancellationToken);
 
         return true;
     }
     
+    public async Task<bool> Update(int id, GenreDto genreDto, CancellationToken cancellationToken)
+    {
+        if (id <= 0)
+        {
+            throw new Exception("Invalid ID");
+        }
+            
+        var genreToUpdate = await GameLibraryDbContext.Genres
+            .Where(x => x.Id == id)
+            .FirstOrDefaultAsync(cancellationToken);
+            
+        if (genreToUpdate is null)
+        {
+            throw new NullReferenceException();
+        }
+
+        genreToUpdate.Name = genreDto.Name ?? genreToUpdate.Name;
+        genreToUpdate.Description = genreDto.Description ?? genreToUpdate.Description;
+
+        await GameLibraryDbContext.SaveChangesAsync(cancellationToken);
+
+        return true;
+    }
     
+    public async Task<bool> Delete(int id, CancellationToken cancellationToken)
+    {
+        if (id <= 0)
+        {
+            throw new Exception("Invalid ID");
+        }
+            
+        var genreToDelete = await GameLibraryDbContext.Genres
+            .Where(x => x.Id == id)
+            .FirstOrDefaultAsync(cancellationToken);
+            
+        if (genreToDelete is null)
+        {
+            throw new NullReferenceException();
+        }
+
+        GameLibraryDbContext.Genres.Remove(genreToDelete);
+
+        await GameLibraryDbContext.SaveChangesAsync(cancellationToken);
+        return true;
+    }
 }

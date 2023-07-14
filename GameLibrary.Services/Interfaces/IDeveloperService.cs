@@ -11,4 +11,6 @@ public interface IDeveloperService
     Task<bool> Create(DeveloperDto developerDto, CancellationToken cancellationToken);
 
     Task<bool> Update(int id, DeveloperDto developerDto, CancellationToken cancellationToken);
+
+    Task<bool> Delete(int id, CancellationToken cancellationToken);
 }
