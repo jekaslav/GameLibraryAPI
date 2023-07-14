@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.API\\GameLibrary.API.csproj": {}
+    "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.API\\GameLibrary.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.API\\GameLibrary.API.csproj": {
+    "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.API\\GameLibrary.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.API\\GameLibrary.API.csproj",
+        "projectUniqueName": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.API\\GameLibrary.API.csproj",
         "projectName": "GameLibrary.API",
-        "projectPath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.API\\GameLibrary.API.csproj",
+        "projectPath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.API\\GameLibrary.API.csproj",
         "packagesPath": "C:\\Users\\Delor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.API\\obj\\",
+        "outputPath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Delor\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Services\\GameLibrary.Services.csproj": {
-                "projectPath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Services\\GameLibrary.Services.csproj"
+              "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Services\\GameLibrary.Services.csproj": {
+                "projectPath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Services\\GameLibrary.Services.csproj"
               }
             }
           }
@@ -100,14 +100,14 @@
         }
       }
     },
-    "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj": {
+    "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj",
         "projectName": "GameLibrary.Domain",
-        "projectPath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj",
+        "projectPath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj",
         "packagesPath": "C:\\Users\\Delor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Delor\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -177,14 +177,14 @@
         }
       }
     },
-    "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Services\\GameLibrary.Services.csproj": {
+    "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Services\\GameLibrary.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Services\\GameLibrary.Services.csproj",
+        "projectUniqueName": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Services\\GameLibrary.Services.csproj",
         "projectName": "GameLibrary.Services",
-        "projectPath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Services\\GameLibrary.Services.csproj",
+        "projectPath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Services\\GameLibrary.Services.csproj",
         "packagesPath": "C:\\Users\\Delor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Services\\obj\\",
+        "outputPath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Delor\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -199,8 +199,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj": {
-                "projectPath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj"
+              "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj": {
+                "projectPath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj"
               }
             }
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "074XtvR+N1KtovRxU6WnuUDosWV1B3y6CDfsTcScnBDy4pbOux0iEdESRMKYXPPbS53loCshkstdNhEQGGBzzw==",
+  "dgSpecHash": "VfMCvjP13VdJUY8e+tYYTWz6beEhrwtejdYy+RycmKd5D8qcaQf/yl0IRECLPq0xdZM3W1cajYEWdy1RDmmagw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.API\\GameLibrary.API.csproj",
+  "projectFilePath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.API\\GameLibrary.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Delor\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Delor\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

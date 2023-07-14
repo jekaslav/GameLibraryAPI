@@ -4,7 +4,7 @@ namespace GameLibrary.Services.Interfaces;
 
 public interface IGameService
 {
-    Task<IEnumerable<GameDto>> GetAllGames(CancellationToken cancellationToken);
+    Task<IEnumerable<GameDto>> GetAllGames(int? genreId, CancellationToken cancellationToken);
 
     Task<GameDto> GetGameById(int id, CancellationToken cancellationToken);
 

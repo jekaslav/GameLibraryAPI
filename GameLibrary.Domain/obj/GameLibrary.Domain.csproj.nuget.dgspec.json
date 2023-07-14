@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj": {}
+    "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj": {
+    "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj",
         "projectName": "GameLibrary.Domain",
-        "projectPath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj",
+        "projectPath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj",
         "packagesPath": "C:\\Users\\Delor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Delor\\AppData\\Roaming\\NuGet\\NuGet.Config"

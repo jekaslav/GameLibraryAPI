@@ -15,9 +15,9 @@ public class GameService : IGameService
         GameLibraryDbContext = context;
     }
     
-    public async Task<IEnumerable<GameDto>> GetAllGames(CancellationToken cancellationToken)
+    public async Task<IEnumerable<GameDto>> GetAllGames(int? genreId, CancellationToken cancellationToken)
     {
-        var games = await GameLibraryDbContext.Games
+        var games = GameLibraryDbContext.Games
             .AsNoTracking()
             .Include(g => g.GameGenres)
             .ThenInclude(gg => gg.Genre)
@@ -27,10 +27,15 @@ public class GameService : IGameService
                 Title = x.Title,
                 DeveloperId = x.DeveloperId,
                 GenreIds = x.GameGenres.Select(gg => gg.GenreId).ToList()
-            })
-            .ToListAsync(cancellationToken);
+            });
 
-        return games;
+        if (genreId.HasValue)
+        {
+            games = games.Where(x => x.GenreIds.Contains(genreId.Value));
+        }
+
+        var gamesByGenre = await games.ToListAsync(cancellationToken);
+        return gamesByGenre;
     }
 
     public async Task<GameDto> GetGameById(int id, CancellationToken cancellationToken)

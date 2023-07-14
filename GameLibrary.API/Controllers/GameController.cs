@@ -14,9 +14,9 @@ public class GameController : ControllerBase
     }
 
     [HttpGet("games")]
-    public async Task<IActionResult> GetAllGames(CancellationToken cancellationToken)
+    public async Task<IActionResult> GetAllGames(int? genreId, CancellationToken cancellationToken)
     {
-        var result = await GameService.GetAllGames(cancellationToken);
+        var result = await GameService.GetAllGames(genreId, cancellationToken);
 
         return Ok(result);
     }

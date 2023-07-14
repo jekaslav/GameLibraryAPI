@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NMnZXAp/Uvb5rrUpk3Ln8+Hnf9Lt+jQ7kUcb2mumHHbjiXisgHvdLrJdf+da9x2MwH8aoNfK39BBXKWJ187OoQ==",
+  "dgSpecHash": "FLS3PzwBm95+uYWuxKPYintJd45JXkCRdgPOdaun2FzB5RZgnTqScg8O4uMCxhJzUQBCyF8DAod7FkysHM+WgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Delor\\RiderProjects\\TestGameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Delor\\GameLibraryAPI\\GameLibrary.Domain\\GameLibrary.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Delor\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Delor\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
